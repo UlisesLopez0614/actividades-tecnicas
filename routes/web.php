@@ -55,3 +55,18 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
         });
     });
 });
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('Admin')->name('admin/')->group(static function() {
+        Route::prefix('installations')->name('installations/')->group(static function() {
+            Route::get('/',                                             'InstallationsController@index')->name('index');
+            Route::get('/create',                                       'InstallationsController@create')->name('create');
+            Route::post('/',                                            'InstallationsController@store')->name('store');
+            Route::get('/{installation}/edit',                          'InstallationsController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'InstallationsController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{installation}',                              'InstallationsController@update')->name('update');
+            Route::delete('/{installation}',                            'InstallationsController@destroy')->name('destroy');
+        });
+    });
+});

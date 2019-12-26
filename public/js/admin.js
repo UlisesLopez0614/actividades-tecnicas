@@ -111586,8 +111586,83 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _profile_edit_profile__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./profile-edit-profile */ "./resources/js/admin/profile-edit-profile/index.js");
 /* harmony import */ var _profile_edit_password__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./profile-edit-password */ "./resources/js/admin/profile-edit-password/index.js");
 /* harmony import */ var _technician__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./technician */ "./resources/js/admin/technician/index.js");
+/* harmony import */ var _installation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./installation */ "./resources/js/admin/installation/index.js");
 
 
+
+
+
+
+/***/ }),
+
+/***/ "./resources/js/admin/installation/Form.js":
+/*!*************************************************!*\
+  !*** ./resources/js/admin/installation/Form.js ***!
+  \*************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app_components_Form_AppForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../app-components/Form/AppForm */ "./resources/js/admin/app-components/Form/AppForm.js");
+
+Vue.component('installation-form', {
+  mixins: [_app_components_Form_AppForm__WEBPACK_IMPORTED_MODULE_0__["default"]],
+  data: function data() {
+    return {
+      form: {
+        tecnico: '',
+        equipo: '',
+        placa: '',
+        idgps: '',
+        serie: '',
+        imei: '',
+        sim: '',
+        ip: '',
+        telefono: '',
+        lugar: '',
+        posicion: false,
+        panico: false,
+        cortemotor: false,
+        otros: '',
+        fecha: '',
+        observacion: '',
+        usuario: ''
+      }
+    };
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/admin/installation/Listing.js":
+/*!****************************************************!*\
+  !*** ./resources/js/admin/installation/Listing.js ***!
+  \****************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app_components_Listing_AppListing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../app-components/Listing/AppListing */ "./resources/js/admin/app-components/Listing/AppListing.js");
+
+Vue.component('installation-listing', {
+  mixins: [_app_components_Listing_AppListing__WEBPACK_IMPORTED_MODULE_0__["default"]]
+});
+
+/***/ }),
+
+/***/ "./resources/js/admin/installation/index.js":
+/*!**************************************************!*\
+  !*** ./resources/js/admin/installation/index.js ***!
+  \**************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Listing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Listing */ "./resources/js/admin/installation/Listing.js");
+/* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Form */ "./resources/js/admin/installation/Form.js");
 
 
 

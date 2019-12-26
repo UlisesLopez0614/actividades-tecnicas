@@ -46,5 +46,37 @@ return [
         ],
     ],
 
+    'installation' => [
+        'title' => 'Instalaciones',
+
+        'actions' => [
+            'index' => 'Instalaciones',
+            'create' => 'Nueva Instalaciones',
+            'edit' => 'Editar :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'tecnico' => 'Nombre del Técnico',
+            'equipo' => 'Nombre del Equipo',
+            'placa' => 'Placa',
+            'idgps' => 'ID GPS',
+            'serie' => 'Serie',
+            'imei' => 'IMEI',
+            'sim' => 'SIM',
+            'ip' => 'IP',
+            'telefono' => 'Teléfono',
+            'lugar' => 'Lugar',
+            'posicion' => 'Posición',
+            'panico' => 'Pánico',
+            'cortemotor' => 'Corte de motor',
+            'otros' => 'Otros',
+            'fecha' => 'Fecha',
+            'observacion' => 'Observación',
+            'usuario' => 'Usuario',
+
+        ],
+    ],
+
     // Do not delete me :) I'm used for auto-generation
 ];
