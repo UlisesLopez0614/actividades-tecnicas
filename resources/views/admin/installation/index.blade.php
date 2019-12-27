@@ -30,7 +30,7 @@
                                     </div>
                                     <div class="col-sm-auto form-group ">
                                         <select class="form-control" v-model="pagination.state.per_page">
-                                            
+
                                             <option value="10">10</option>
                                             <option value="25">25</option>
                                             <option value="100">100</option>
@@ -39,7 +39,7 @@
                                 </div>
                             </form>
 
-                            <table class="table table-hover table-listing">
+                            <table class="table table-hover table-listing table-responsive">
                                 <thead>
                                     <tr>
                                         <th class="bulk-checkbox">
@@ -49,7 +49,7 @@
                                             </label>
                                         </th>
 
-                                        <th is='sortable' :column="'id'">{{ trans('admin.installation.columns.id') }}</th>
+                                        <!--th is='sortable' :column="'id'">{{ trans('admin.installation.columns.id') }}</th-->
                                         <th is='sortable' :column="'tecnico'">{{ trans('admin.installation.columns.tecnico') }}</th>
                                         <th is='sortable' :column="'equipo'">{{ trans('admin.installation.columns.equipo') }}</th>
                                         <th is='sortable' :column="'placa'">{{ trans('admin.installation.columns.placa') }}</th>
@@ -89,7 +89,7 @@
                                             </label>
                                         </td>
 
-                                    <td>@{{ item.id }}</td>
+                                    <!--td>@{{ item.id }}</td-->
                                         <td>@{{ item.tecnico }}</td>
                                         <td>@{{ item.equipo }}</td>
                                         <td>@{{ item.placa }}</td>
@@ -106,7 +106,7 @@
                                         <td>@{{ item.otros }}</td>
                                         <td>@{{ item.fecha | date }}</td>
                                         <td>@{{ item.usuario }}</td>
-                                        
+
                                         <td>
                                             <div class="row no-gutters">
                                                 <div class="col-auto">

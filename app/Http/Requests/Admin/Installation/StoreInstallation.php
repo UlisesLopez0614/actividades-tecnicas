@@ -26,6 +26,7 @@ class StoreInstallation extends FormRequest
     public function rules(): array
     {
         return [
+            'activated' => ['required', 'boolean'],
             'tecnico' => ['required', 'string'],
             'equipo' => ['required', 'string'],
             'placa' => ['required', 'string'],

@@ -25,7 +25,7 @@ class IndexInstallation extends FormRequest
     public function rules(): array
     {
         return [
-            'orderBy' => 'in:id,tecnico,equipo,placa,idgps,serie,imei,sim,ip,telefono,lugar,posicion,panico,cortemotor,otros,fecha,usuario|nullable',
+            'orderBy' => 'in:id,activated,tecnico,equipo,placa,idgps,serie,imei,sim,ip,telefono,lugar,posicion,panico,cortemotor,otros,fecha,usuario|nullable',
             'orderDirection' => 'in:asc,desc|nullable',
             'search' => 'string|nullable',
             'page' => 'integer|nullable',

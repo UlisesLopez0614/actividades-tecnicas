@@ -15,6 +15,7 @@ class CreateInstallationsTable extends Migration
     {
         Schema::create('installations', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->boolean('activated');
             $table->string('tecnico');
             $table->string('equipo');
             $table->string('placa');

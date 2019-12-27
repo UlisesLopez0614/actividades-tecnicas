@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Installation extends Model
 {
     protected $fillable = [
+        'activated',
         'tecnico',
         'equipo',
         'placa',

@@ -1,8 +1,11 @@
-<div class="form-group row align-items-center" :class="{'has-danger': errors.has('tecnico'), 'has-success': fields.tecnico && fields.tecnico.valid }">
-    <label for="tecnico" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.installation.columns.tecnico') }}</label>
-        <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
-        <input type="text" v-model="form.tecnico" v-validate="'required'" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('tecnico'), 'form-control-success': fields.tecnico && fields.tecnico.valid}" id="tecnico" name="tecnico" placeholder="{{ trans('admin.installation.columns.tecnico') }}">
-        <div v-if="errors.has('tecnico')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('tecnico') }}</div>
+<div class="form-check row" :class="{'has-danger': errors.has('activated'), 'has-success': fields.activated && fields.activated.valid }">
+    <div class="ml-md-auto" :class="isFormLocalized ? 'col-md-8' : 'col-md-10'">
+        <input class="form-check-input" id="activated" type="checkbox" v-model="form.activated" v-validate="''" data-vv-name="activated"  name="activated_fake_element">
+        <label class="form-check-label" for="activated">
+            {{ trans('admin.installation.columns.activated') }}
+        </label>
+        <input type="hidden" name="activated" :value="form.activated">
+        <div v-if="errors.has('activated')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('activated') }}</div>
     </div>
 </div>
 
@@ -84,11 +87,11 @@
     </div>
 </div>
 
-<div class="form-group row align-items-center" :class="{'has-danger': errors.has('equipo'), 'has-success': fields.equipo && fields.equipo.valid }">
-    <label for="equipo" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.installation.columns.equipo') }}</label>
+<div class="form-group row align-items-center" :class="{'has-danger': errors.has('tecnico'), 'has-success': fields.tecnico && fields.tecnico.valid }">
+    <label for="tecnico" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.installation.columns.tecnico') }}</label>
         <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
-        <input type="text" v-model="form.equipo" v-validate="'required'" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('equipo'), 'form-control-success': fields.equipo && fields.equipo.valid}" id="equipo" name="equipo" placeholder="{{ trans('admin.installation.columns.equipo') }}">
-        <div v-if="errors.has('equipo')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('equipo') }}</div>
+        <input type="text" v-model="form.tecnico" v-validate="'required'" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('tecnico'), 'form-control-success': fields.tecnico && fields.tecnico.valid}" id="tecnico" name="tecnico" placeholder="{{ trans('admin.installation.columns.tecnico') }}">
+        <div v-if="errors.has('tecnico')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('tecnico') }}</div>
     </div>
 </div>
 
@@ -137,6 +140,14 @@
         <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
         <input type="text" v-model="form.placa" v-validate="'required'" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('placa'), 'form-control-success': fields.placa && fields.placa.valid}" id="placa" name="placa" placeholder="{{ trans('admin.installation.columns.placa') }}">
         <div v-if="errors.has('placa')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('placa') }}</div>
+    </div>
+</div>
+
+<div class="form-group row align-items-center" :class="{'has-danger': errors.has('equipo'), 'has-success': fields.equipo && fields.equipo.valid }">
+    <label for="equipo" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.installation.columns.equipo') }}</label>
+        <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
+        <input type="text" v-model="form.equipo" v-validate="'required'" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('equipo'), 'form-control-success': fields.equipo && fields.equipo.valid}" id="equipo" name="equipo" placeholder="{{ trans('admin.installation.columns.equipo') }}">
+        <div v-if="errors.has('equipo')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('equipo') }}</div>
     </div>
 </div>
 

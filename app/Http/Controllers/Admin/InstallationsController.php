@@ -19,6 +19,7 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
+use Auth;
 
 class InstallationsController extends Controller
 {
@@ -64,6 +65,8 @@ class InstallationsController extends Controller
     public function create()
     {
         $this->authorize('admin.installation.create');
+
+        $installation = "Vladimir Romero";
 
         return view('admin.installation.create');
     }

@@ -5,6 +5,7 @@ Vue.component('installation-form', {
     data: function() {
         return {
             form: {
+                activated:  false ,
                 tecnico:  '' ,
                 equipo:  '' ,
                 placa:  '' ,

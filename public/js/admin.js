@@ -111611,6 +111611,7 @@ Vue.component('installation-form', {
   data: function data() {
     return {
       form: {
+        activated: false,
         tecnico: '',
         equipo: '',
         placa: '',

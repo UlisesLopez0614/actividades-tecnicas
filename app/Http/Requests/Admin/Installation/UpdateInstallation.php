@@ -26,6 +26,7 @@ class UpdateInstallation extends FormRequest
     public function rules(): array
     {
         return [
+            'activated' => ['sometimes', 'boolean'],
             'tecnico' => ['sometimes', 'string'],
             'equipo' => ['sometimes', 'string'],
             'placa' => ['sometimes', 'string'],
