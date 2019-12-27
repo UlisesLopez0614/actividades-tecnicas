@@ -5,3 +5,6 @@ import './technician';
 import './installation';
 import './revision';
 import './gpschange';
+import './simchange';
+import './uninstallation';
+import './gpstransfer';

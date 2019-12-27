@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\Gpschange\BulkDestroyGpschange;
-use App\Http\Requests\Admin\Gpschange\DestroyGpschange;
-use App\Http\Requests\Admin\Gpschange\IndexGpschange;
-use App\Http\Requests\Admin\Gpschange\StoreGpschange;
-use App\Http\Requests\Admin\Gpschange\UpdateGpschange;
-use App\Models\Gpschange;
+use App\Http\Requests\Admin\Gpstransfer\BulkDestroyGpstransfer;
+use App\Http\Requests\Admin\Gpstransfer\DestroyGpstransfer;
+use App\Http\Requests\Admin\Gpstransfer\IndexGpstransfer;
+use App\Http\Requests\Admin\Gpstransfer\StoreGpstransfer;
+use App\Http\Requests\Admin\Gpstransfer\UpdateGpstransfer;
+use App\Models\Gpstransfer;
 use Brackets\AdminListing\Facades\AdminListing;
 use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
@@ -20,27 +20,27 @@ use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 
-class GpschangesController extends Controller
+class GpstransfersController extends Controller
 {
 
     /**
      * Display a listing of the resource.
      *
-     * @param IndexGpschange $request
+     * @param IndexGpstransfer $request
      * @return array|Factory|View
      */
-    public function index(IndexGpschange $request)
+    public function index(IndexGpstransfer $request)
     {
         // create and AdminListing instance for a specific model and
-        $data = AdminListing::create(Gpschange::class)->processRequestAndGet(
+        $data = AdminListing::create(Gpstransfer::class)->processRequestAndGet(
             // pass the request with params
             $request,
 
             // set columns to query
-            ['id', 'activated', 'tecnico', 'nombre', 'placa', 'lugar', 'idgpsanterior', 'seriegpsanterior', 'tipogpsanterior', 'idgpsnuevo', 'seriegpsnuevo', 'imeigpsnuevo', 'ipgpsnuevo', 'simgpsnuevo', 'telefonogpsnuevo', 'tipogpsnuevo', 'posicion', 'panico', 'cortemotor', 'otros', 'fecha', 'usuario'],
+            ['id', 'activated', 'tecnico', 'nombre', 'placaanterior', 'placanueva', 'lugar', 'posicion', 'panico', 'cortemotor', 'otros', 'fecha', 'usuario'],
 
             // set columns to searchIn
-            ['id', 'tecnico', 'nombre', 'placa', 'lugar', 'idgpsanterior', 'seriegpsanterior', 'tipogpsanterior', 'idgpsnuevo', 'seriegpsnuevo', 'imeigpsnuevo', 'ipgpsnuevo', 'simgpsnuevo', 'telefonogpsnuevo', 'tipogpsnuevo', 'otros', 'observacion', 'usuario']
+            ['id', 'tecnico', 'nombre', 'placaanterior', 'placanueva', 'lugar', 'otros', 'observacion', 'usuario']
         );
 
         if ($request->ajax()) {
@@ -52,7 +52,7 @@ class GpschangesController extends Controller
             return ['data' => $data];
         }
 
-        return view('admin.gpschange.index', ['data' => $data]);
+        return view('admin.gpstransfer.index', ['data' => $data]);
     }
 
     /**
@@ -63,42 +63,42 @@ class GpschangesController extends Controller
      */
     public function create()
     {
-        $this->authorize('admin.gpschange.create');
+        $this->authorize('admin.gpstransfer.create');
 
-        return view('admin.gpschange.create');
+        return view('admin.gpstransfer.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param StoreGpschange $request
+     * @param StoreGpstransfer $request
      * @return array|RedirectResponse|Redirector
      */
-    public function store(StoreGpschange $request)
+    public function store(StoreGpstransfer $request)
     {
         // Sanitize input
         $sanitized = $request->getSanitized();
 
-        // Store the Gpschange
-        $gpschange = Gpschange::create($sanitized);
+        // Store the Gpstransfer
+        $gpstransfer = Gpstransfer::create($sanitized);
 
         if ($request->ajax()) {
-            return ['redirect' => url('admin/gpschanges'), 'message' => trans('brackets/admin-ui::admin.operation.succeeded')];
+            return ['redirect' => url('admin/gpstransfers'), 'message' => trans('brackets/admin-ui::admin.operation.succeeded')];
         }
 
-        return redirect('admin/gpschanges');
+        return redirect('admin/gpstransfers');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param Gpschange $gpschange
+     * @param Gpstransfer $gpstransfer
      * @throws AuthorizationException
      * @return void
      */
-    public function show(Gpschange $gpschange)
+    public function show(Gpstransfer $gpstransfer)
     {
-        $this->authorize('admin.gpschange.show', $gpschange);
+        $this->authorize('admin.gpstransfer.show', $gpstransfer);
 
         // TODO your code goes here
     }
@@ -106,56 +106,56 @@ class GpschangesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param Gpschange $gpschange
+     * @param Gpstransfer $gpstransfer
      * @throws AuthorizationException
      * @return Factory|View
      */
-    public function edit(Gpschange $gpschange)
+    public function edit(Gpstransfer $gpstransfer)
     {
-        $this->authorize('admin.gpschange.edit', $gpschange);
+        $this->authorize('admin.gpstransfer.edit', $gpstransfer);
 
 
-        return view('admin.gpschange.edit', [
-            'gpschange' => $gpschange,
+        return view('admin.gpstransfer.edit', [
+            'gpstransfer' => $gpstransfer,
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param UpdateGpschange $request
-     * @param Gpschange $gpschange
+     * @param UpdateGpstransfer $request
+     * @param Gpstransfer $gpstransfer
      * @return array|RedirectResponse|Redirector
      */
-    public function update(UpdateGpschange $request, Gpschange $gpschange)
+    public function update(UpdateGpstransfer $request, Gpstransfer $gpstransfer)
     {
         // Sanitize input
         $sanitized = $request->getSanitized();
 
-        // Update changed values Gpschange
-        $gpschange->update($sanitized);
+        // Update changed values Gpstransfer
+        $gpstransfer->update($sanitized);
 
         if ($request->ajax()) {
             return [
-                'redirect' => url('admin/gpschanges'),
+                'redirect' => url('admin/gpstransfers'),
                 'message' => trans('brackets/admin-ui::admin.operation.succeeded'),
             ];
         }
 
-        return redirect('admin/gpschanges');
+        return redirect('admin/gpstransfers');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param DestroyGpschange $request
-     * @param Gpschange $gpschange
+     * @param DestroyGpstransfer $request
+     * @param Gpstransfer $gpstransfer
      * @throws Exception
      * @return ResponseFactory|RedirectResponse|Response
      */
-    public function destroy(DestroyGpschange $request, Gpschange $gpschange)
+    public function destroy(DestroyGpstransfer $request, Gpstransfer $gpstransfer)
     {
-        $gpschange->delete();
+        $gpstransfer->delete();
 
         if ($request->ajax()) {
             return response(['message' => trans('brackets/admin-ui::admin.operation.succeeded')]);
@@ -167,17 +167,17 @@ class GpschangesController extends Controller
     /**
      * Remove the specified resources from storage.
      *
-     * @param BulkDestroyGpschange $request
+     * @param BulkDestroyGpstransfer $request
      * @throws Exception
      * @return Response|bool
      */
-    public function bulkDestroy(BulkDestroyGpschange $request) : Response
+    public function bulkDestroy(BulkDestroyGpstransfer $request) : Response
     {
         DB::transaction(static function () use ($request) {
             collect($request->data['ids'])
                 ->chunk(1000)
                 ->each(static function ($bulkChunk) {
-                    Gpschange::whereIn('id', $bulkChunk)->delete();
+                    Gpstransfer::whereIn('id', $bulkChunk)->delete();
 
                     // TODO your code goes here
                 });

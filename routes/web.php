@@ -100,3 +100,48 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
         });
     });
 });
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('Admin')->name('admin/')->group(static function() {
+        Route::prefix('simchanges')->name('simchanges/')->group(static function() {
+            Route::get('/',                                             'SimchangesController@index')->name('index');
+            Route::get('/create',                                       'SimchangesController@create')->name('create');
+            Route::post('/',                                            'SimchangesController@store')->name('store');
+            Route::get('/{simchange}/edit',                             'SimchangesController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'SimchangesController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{simchange}',                                 'SimchangesController@update')->name('update');
+            Route::delete('/{simchange}',                               'SimchangesController@destroy')->name('destroy');
+        });
+    });
+});
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('Admin')->name('admin/')->group(static function() {
+        Route::prefix('uninstallations')->name('uninstallations/')->group(static function() {
+            Route::get('/',                                             'UninstallationsController@index')->name('index');
+            Route::get('/create',                                       'UninstallationsController@create')->name('create');
+            Route::post('/',                                            'UninstallationsController@store')->name('store');
+            Route::get('/{uninstallation}/edit',                        'UninstallationsController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'UninstallationsController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{uninstallation}',                            'UninstallationsController@update')->name('update');
+            Route::delete('/{uninstallation}',                          'UninstallationsController@destroy')->name('destroy');
+        });
+    });
+});
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('Admin')->name('admin/')->group(static function() {
+        Route::prefix('gpstransfers')->name('gpstransfers/')->group(static function() {
+            Route::get('/',                                             'GpstransfersController@index')->name('index');
+            Route::get('/create',                                       'GpstransfersController@create')->name('create');
+            Route::post('/',                                            'GpstransfersController@store')->name('store');
+            Route::get('/{gpstransfer}/edit',                           'GpstransfersController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'GpstransfersController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{gpstransfer}',                               'GpstransfersController@update')->name('update');
+            Route::delete('/{gpstransfer}',                             'GpstransfersController@destroy')->name('destroy');
+        });
+    });
+});

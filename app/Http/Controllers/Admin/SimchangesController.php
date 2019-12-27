@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\Gpschange\BulkDestroyGpschange;
-use App\Http\Requests\Admin\Gpschange\DestroyGpschange;
-use App\Http\Requests\Admin\Gpschange\IndexGpschange;
-use App\Http\Requests\Admin\Gpschange\StoreGpschange;
-use App\Http\Requests\Admin\Gpschange\UpdateGpschange;
-use App\Models\Gpschange;
+use App\Http\Requests\Admin\Simchange\BulkDestroySimchange;
+use App\Http\Requests\Admin\Simchange\DestroySimchange;
+use App\Http\Requests\Admin\Simchange\IndexSimchange;
+use App\Http\Requests\Admin\Simchange\StoreSimchange;
+use App\Http\Requests\Admin\Simchange\UpdateSimchange;
+use App\Models\Simchange;
 use Brackets\AdminListing\Facades\AdminListing;
 use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
@@ -20,27 +20,27 @@ use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 
-class GpschangesController extends Controller
+class SimchangesController extends Controller
 {
 
     /**
      * Display a listing of the resource.
      *
-     * @param IndexGpschange $request
+     * @param IndexSimchange $request
      * @return array|Factory|View
      */
-    public function index(IndexGpschange $request)
+    public function index(IndexSimchange $request)
     {
         // create and AdminListing instance for a specific model and
-        $data = AdminListing::create(Gpschange::class)->processRequestAndGet(
+        $data = AdminListing::create(Simchange::class)->processRequestAndGet(
             // pass the request with params
             $request,
 
             // set columns to query
-            ['id', 'activated', 'tecnico', 'nombre', 'placa', 'lugar', 'idgpsanterior', 'seriegpsanterior', 'tipogpsanterior', 'idgpsnuevo', 'seriegpsnuevo', 'imeigpsnuevo', 'ipgpsnuevo', 'simgpsnuevo', 'telefonogpsnuevo', 'tipogpsnuevo', 'posicion', 'panico', 'cortemotor', 'otros', 'fecha', 'usuario'],
+            ['id', 'activated', 'tecnico', 'nombre', 'placa', 'lugar', 'simanterior', 'simnuevo', 'posicion', 'panico', 'cortemotor', 'otros', 'fecha', 'usuario'],
 
             // set columns to searchIn
-            ['id', 'tecnico', 'nombre', 'placa', 'lugar', 'idgpsanterior', 'seriegpsanterior', 'tipogpsanterior', 'idgpsnuevo', 'seriegpsnuevo', 'imeigpsnuevo', 'ipgpsnuevo', 'simgpsnuevo', 'telefonogpsnuevo', 'tipogpsnuevo', 'otros', 'observacion', 'usuario']
+            ['id', 'tecnico', 'nombre', 'placa', 'lugar', 'simanterior', 'simnuevo', 'otros', 'observacion', 'usuario']
         );
 
         if ($request->ajax()) {
@@ -52,7 +52,7 @@ class GpschangesController extends Controller
             return ['data' => $data];
         }
 
-        return view('admin.gpschange.index', ['data' => $data]);
+        return view('admin.simchange.index', ['data' => $data]);
     }
 
     /**
@@ -63,42 +63,42 @@ class GpschangesController extends Controller
      */
     public function create()
     {
-        $this->authorize('admin.gpschange.create');
+        $this->authorize('admin.simchange.create');
 
-        return view('admin.gpschange.create');
+        return view('admin.simchange.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param StoreGpschange $request
+     * @param StoreSimchange $request
      * @return array|RedirectResponse|Redirector
      */
-    public function store(StoreGpschange $request)
+    public function store(StoreSimchange $request)
     {
         // Sanitize input
         $sanitized = $request->getSanitized();
 
-        // Store the Gpschange
-        $gpschange = Gpschange::create($sanitized);
+        // Store the Simchange
+        $simchange = Simchange::create($sanitized);
 
         if ($request->ajax()) {
-            return ['redirect' => url('admin/gpschanges'), 'message' => trans('brackets/admin-ui::admin.operation.succeeded')];
+            return ['redirect' => url('admin/simchanges'), 'message' => trans('brackets/admin-ui::admin.operation.succeeded')];
         }
 
-        return redirect('admin/gpschanges');
+        return redirect('admin/simchanges');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param Gpschange $gpschange
+     * @param Simchange $simchange
      * @throws AuthorizationException
      * @return void
      */
-    public function show(Gpschange $gpschange)
+    public function show(Simchange $simchange)
     {
-        $this->authorize('admin.gpschange.show', $gpschange);
+        $this->authorize('admin.simchange.show', $simchange);
 
         // TODO your code goes here
     }
@@ -106,56 +106,56 @@ class GpschangesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param Gpschange $gpschange
+     * @param Simchange $simchange
      * @throws AuthorizationException
      * @return Factory|View
      */
-    public function edit(Gpschange $gpschange)
+    public function edit(Simchange $simchange)
     {
-        $this->authorize('admin.gpschange.edit', $gpschange);
+        $this->authorize('admin.simchange.edit', $simchange);
 
 
-        return view('admin.gpschange.edit', [
-            'gpschange' => $gpschange,
+        return view('admin.simchange.edit', [
+            'simchange' => $simchange,
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param UpdateGpschange $request
-     * @param Gpschange $gpschange
+     * @param UpdateSimchange $request
+     * @param Simchange $simchange
      * @return array|RedirectResponse|Redirector
      */
-    public function update(UpdateGpschange $request, Gpschange $gpschange)
+    public function update(UpdateSimchange $request, Simchange $simchange)
     {
         // Sanitize input
         $sanitized = $request->getSanitized();
 
-        // Update changed values Gpschange
-        $gpschange->update($sanitized);
+        // Update changed values Simchange
+        $simchange->update($sanitized);
 
         if ($request->ajax()) {
             return [
-                'redirect' => url('admin/gpschanges'),
+                'redirect' => url('admin/simchanges'),
                 'message' => trans('brackets/admin-ui::admin.operation.succeeded'),
             ];
         }
 
-        return redirect('admin/gpschanges');
+        return redirect('admin/simchanges');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param DestroyGpschange $request
-     * @param Gpschange $gpschange
+     * @param DestroySimchange $request
+     * @param Simchange $simchange
      * @throws Exception
      * @return ResponseFactory|RedirectResponse|Response
      */
-    public function destroy(DestroyGpschange $request, Gpschange $gpschange)
+    public function destroy(DestroySimchange $request, Simchange $simchange)
     {
-        $gpschange->delete();
+        $simchange->delete();
 
         if ($request->ajax()) {
             return response(['message' => trans('brackets/admin-ui::admin.operation.succeeded')]);
@@ -167,17 +167,17 @@ class GpschangesController extends Controller
     /**
      * Remove the specified resources from storage.
      *
-     * @param BulkDestroyGpschange $request
+     * @param BulkDestroySimchange $request
      * @throws Exception
      * @return Response|bool
      */
-    public function bulkDestroy(BulkDestroyGpschange $request) : Response
+    public function bulkDestroy(BulkDestroySimchange $request) : Response
     {
         DB::transaction(static function () use ($request) {
             collect($request->data['ids'])
                 ->chunk(1000)
                 ->each(static function ($bulkChunk) {
-                    Gpschange::whereIn('id', $bulkChunk)->delete();
+                    Simchange::whereIn('id', $bulkChunk)->delete();
 
                     // TODO your code goes here
                 });

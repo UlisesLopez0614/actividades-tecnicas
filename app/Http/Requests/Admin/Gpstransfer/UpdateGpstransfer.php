@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Requests\Admin\Gpschange;
+namespace App\Http\Requests\Admin\Gpstransfer;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Validation\Rule;
 
-class UpdateGpschange extends FormRequest
+class UpdateGpstransfer extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -15,7 +15,7 @@ class UpdateGpschange extends FormRequest
      */
     public function authorize(): bool
     {
-        return Gate::allows('admin.gpschange.edit', $this->gpschange);
+        return Gate::allows('admin.gpstransfer.edit', $this->gpstransfer);
     }
 
     /**
@@ -29,18 +29,9 @@ class UpdateGpschange extends FormRequest
             'activated' => ['sometimes', 'boolean'],
             'tecnico' => ['sometimes', 'string'],
             'nombre' => ['sometimes', 'string'],
-            'placa' => ['sometimes', 'string'],
+            'placaanterior' => ['sometimes', 'string'],
+            'placanueva' => ['sometimes', 'string'],
             'lugar' => ['sometimes', 'string'],
-            'idgpsanterior' => ['sometimes', 'string'],
-            'seriegpsanterior' => ['sometimes', 'string'],
-            'tipogpsanterior' => ['sometimes', 'string'],
-            'idgpsnuevo' => ['sometimes', 'string'],
-            'seriegpsnuevo' => ['sometimes', 'string'],
-            'imeigpsnuevo' => ['sometimes', 'string'],
-            'ipgpsnuevo' => ['sometimes', 'string'],
-            'simgpsnuevo' => ['sometimes', 'string'],
-            'telefonogpsnuevo' => ['sometimes', 'string'],
-            'tipogpsnuevo' => ['sometimes', 'string'],
             'posicion' => ['nullable', 'boolean'],
             'panico' => ['nullable', 'boolean'],
             'cortemotor' => ['nullable', 'boolean'],

@@ -1,6 +1,6 @@
 import AppForm from '../app-components/Form/AppForm';
 
-Vue.component('gpschange-form', {
+Vue.component('simchange-form', {
     mixins: [AppForm],
     data: function() {
         return {
@@ -10,16 +10,8 @@ Vue.component('gpschange-form', {
                 nombre:  '' ,
                 placa:  '' ,
                 lugar:  '' ,
-                idgpsanterior:  '' ,
-                seriegpsanterior:  '' ,
-                tipogpsanterior:  '' ,
-                idgpsnuevo:  '' ,
-                seriegpsnuevo:  '' ,
-                imeigpsnuevo:  '' ,
-                ipgpsnuevo:  '' ,
-                simgpsnuevo:  '' ,
-                telefonogpsnuevo:  '' ,
-                tipogpsnuevo:  '' ,
+                simanterior:  '' ,
+                simnuevo:  '' ,
                 posicion:  false ,
                 panico:  false ,
                 cortemotor:  false ,

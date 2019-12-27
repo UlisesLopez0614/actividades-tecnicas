@@ -111609,7 +111609,8 @@ Vue.component('gpschange-form', {
         cortemotor: false,
         otros: '',
         fecha: '',
-        observacion: ''
+        observacion: '',
+        usuario: ''
       }
     };
   }
@@ -111650,6 +111651,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/admin/gpstransfer/Form.js":
+/*!************************************************!*\
+  !*** ./resources/js/admin/gpstransfer/Form.js ***!
+  \************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app_components_Form_AppForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../app-components/Form/AppForm */ "./resources/js/admin/app-components/Form/AppForm.js");
+
+Vue.component('gpstransfer-form', {
+  mixins: [_app_components_Form_AppForm__WEBPACK_IMPORTED_MODULE_0__["default"]],
+  data: function data() {
+    return {
+      form: {
+        activated: false,
+        tecnico: '',
+        nombre: '',
+        placaanterior: '',
+        placanueva: '',
+        lugar: '',
+        posicion: false,
+        panico: false,
+        cortemotor: false,
+        otros: '',
+        fecha: '',
+        observacion: '',
+        usuario: ''
+      }
+    };
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/admin/gpstransfer/Listing.js":
+/*!***************************************************!*\
+  !*** ./resources/js/admin/gpstransfer/Listing.js ***!
+  \***************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app_components_Listing_AppListing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../app-components/Listing/AppListing */ "./resources/js/admin/app-components/Listing/AppListing.js");
+
+Vue.component('gpstransfer-listing', {
+  mixins: [_app_components_Listing_AppListing__WEBPACK_IMPORTED_MODULE_0__["default"]]
+});
+
+/***/ }),
+
+/***/ "./resources/js/admin/gpstransfer/index.js":
+/*!*************************************************!*\
+  !*** ./resources/js/admin/gpstransfer/index.js ***!
+  \*************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Listing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Listing */ "./resources/js/admin/gpstransfer/Listing.js");
+/* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Form */ "./resources/js/admin/gpstransfer/Form.js");
+
+
+
+/***/ }),
+
 /***/ "./resources/js/admin/index.js":
 /*!*************************************!*\
   !*** ./resources/js/admin/index.js ***!
@@ -111666,6 +111736,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _installation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./installation */ "./resources/js/admin/installation/index.js");
 /* harmony import */ var _revision__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./revision */ "./resources/js/admin/revision/index.js");
 /* harmony import */ var _gpschange__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./gpschange */ "./resources/js/admin/gpschange/index.js");
+/* harmony import */ var _simchange__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./simchange */ "./resources/js/admin/simchange/index.js");
+/* harmony import */ var _uninstallation__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./uninstallation */ "./resources/js/admin/uninstallation/index.js");
+/* harmony import */ var _gpstransfer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./gpstransfer */ "./resources/js/admin/gpstransfer/index.js");
+
+
+
 
 
 
@@ -111920,6 +111996,76 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/admin/simchange/Form.js":
+/*!**********************************************!*\
+  !*** ./resources/js/admin/simchange/Form.js ***!
+  \**********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app_components_Form_AppForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../app-components/Form/AppForm */ "./resources/js/admin/app-components/Form/AppForm.js");
+
+Vue.component('simchange-form', {
+  mixins: [_app_components_Form_AppForm__WEBPACK_IMPORTED_MODULE_0__["default"]],
+  data: function data() {
+    return {
+      form: {
+        activated: false,
+        tecnico: '',
+        nombre: '',
+        placa: '',
+        lugar: '',
+        simanterior: '',
+        simnuevo: '',
+        posicion: false,
+        panico: false,
+        cortemotor: false,
+        otros: '',
+        fecha: '',
+        observacion: '',
+        usuario: ''
+      }
+    };
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/admin/simchange/Listing.js":
+/*!*************************************************!*\
+  !*** ./resources/js/admin/simchange/Listing.js ***!
+  \*************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app_components_Listing_AppListing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../app-components/Listing/AppListing */ "./resources/js/admin/app-components/Listing/AppListing.js");
+
+Vue.component('simchange-listing', {
+  mixins: [_app_components_Listing_AppListing__WEBPACK_IMPORTED_MODULE_0__["default"]]
+});
+
+/***/ }),
+
+/***/ "./resources/js/admin/simchange/index.js":
+/*!***********************************************!*\
+  !*** ./resources/js/admin/simchange/index.js ***!
+  \***********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Listing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Listing */ "./resources/js/admin/simchange/Listing.js");
+/* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Form */ "./resources/js/admin/simchange/Form.js");
+
+
+
+/***/ }),
+
 /***/ "./resources/js/admin/technician/Form.js":
 /*!***********************************************!*\
   !*** ./resources/js/admin/technician/Form.js ***!
@@ -111973,6 +112119,70 @@ Vue.component('technician-listing', {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Listing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Listing */ "./resources/js/admin/technician/Listing.js");
 /* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Form */ "./resources/js/admin/technician/Form.js");
+
+
+
+/***/ }),
+
+/***/ "./resources/js/admin/uninstallation/Form.js":
+/*!***************************************************!*\
+  !*** ./resources/js/admin/uninstallation/Form.js ***!
+  \***************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app_components_Form_AppForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../app-components/Form/AppForm */ "./resources/js/admin/app-components/Form/AppForm.js");
+
+Vue.component('uninstallation-form', {
+  mixins: [_app_components_Form_AppForm__WEBPACK_IMPORTED_MODULE_0__["default"]],
+  data: function data() {
+    return {
+      form: {
+        activated: false,
+        tecnico: '',
+        nombre: '',
+        placa: '',
+        lugar: '',
+        fecha: '',
+        observacion: '',
+        usuario: ''
+      }
+    };
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/admin/uninstallation/Listing.js":
+/*!******************************************************!*\
+  !*** ./resources/js/admin/uninstallation/Listing.js ***!
+  \******************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app_components_Listing_AppListing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../app-components/Listing/AppListing */ "./resources/js/admin/app-components/Listing/AppListing.js");
+
+Vue.component('uninstallation-listing', {
+  mixins: [_app_components_Listing_AppListing__WEBPACK_IMPORTED_MODULE_0__["default"]]
+});
+
+/***/ }),
+
+/***/ "./resources/js/admin/uninstallation/index.js":
+/*!****************************************************!*\
+  !*** ./resources/js/admin/uninstallation/index.js ***!
+  \****************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Listing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Listing */ "./resources/js/admin/uninstallation/Listing.js");
+/* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Form */ "./resources/js/admin/uninstallation/Form.js");
 
 
 

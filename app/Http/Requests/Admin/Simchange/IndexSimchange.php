@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Requests\Admin\Gpschange;
+namespace App\Http\Requests\Admin\Simchange;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Gate;
 
-class IndexGpschange extends FormRequest
+class IndexSimchange extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -14,7 +14,7 @@ class IndexGpschange extends FormRequest
      */
     public function authorize(): bool
     {
-        return Gate::allows('admin.gpschange.index');
+        return Gate::allows('admin.simchange.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class IndexGpschange extends FormRequest
     public function rules(): array
     {
         return [
-            'orderBy' => 'in:id,activated,tecnico,nombre,placa,lugar,idgpsanterior,seriegpsanterior,tipogpsanterior,idgpsnuevo,seriegpsnuevo,imeigpsnuevo,ipgpsnuevo,simgpsnuevo,telefonogpsnuevo,tipogpsnuevo,posicion,panico,cortemotor,otros,fecha,usuario|nullable',
+            'orderBy' => 'in:id,activated,tecnico,nombre,placa,lugar,simanterior,simnuevo,posicion,panico,cortemotor,otros,fecha,usuario|nullable',
             'orderDirection' => 'in:asc,desc|nullable',
             'search' => 'string|nullable',
             'page' => 'integer|nullable',

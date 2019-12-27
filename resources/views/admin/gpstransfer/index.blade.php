@@ -1,20 +1,20 @@
 @extends('brackets/admin-ui::admin.layout.default')
 
-@section('title', trans('admin.gpschange.actions.index'))
+@section('title', trans('admin.gpstransfer.actions.index'))
 
 @section('body')
 
-    <gpschange-listing
+    <gpstransfer-listing
         :data="{{ $data->toJson() }}"
-        :url="'{{ url('admin/gpschanges') }}'"
+        :url="'{{ url('admin/gpstransfers') }}'"
         inline-template>
 
         <div class="row">
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        <i class="fa fa-align-justify"></i> {{ trans('admin.gpschange.actions.index') }}
-                        <a class="btn btn-primary btn-spinner btn-sm pull-right m-b-0" href="{{ url('admin/gpschanges/create') }}" role="button"><i class="fa fa-plus"></i>&nbsp; {{ trans('admin.gpschange.actions.create') }}</a>
+                        <i class="fa fa-align-justify"></i> {{ trans('admin.gpstransfer.actions.index') }}
+                        <a class="btn btn-primary btn-spinner btn-sm pull-right m-b-0" href="{{ url('admin/gpstransfers/create') }}" role="button"><i class="fa fa-plus"></i>&nbsp; {{ trans('admin.gpstransfer.actions.create') }}</a>
                     </div>
                     <div class="card-body" v-cloak>
                         <div class="card-block">
@@ -49,38 +49,29 @@
                                             </label>
                                         </th>
 
-                                        <th is='sortable' :column="'id'">{{ trans('admin.gpschange.columns.id') }}</th>
-                                        <th is='sortable' :column="'activated'">{{ trans('admin.gpschange.columns.activated') }}</th>
-                                        <th is='sortable' :column="'tecnico'">{{ trans('admin.gpschange.columns.tecnico') }}</th>
-                                        <th is='sortable' :column="'nombre'">{{ trans('admin.gpschange.columns.nombre') }}</th>
-                                        <th is='sortable' :column="'placa'">{{ trans('admin.gpschange.columns.placa') }}</th>
-                                        <th is='sortable' :column="'lugar'">{{ trans('admin.gpschange.columns.lugar') }}</th>
-                                        <th is='sortable' :column="'idgpsanterior'">{{ trans('admin.gpschange.columns.idgpsanterior') }}</th>
-                                        <th is='sortable' :column="'seriegpsanterior'">{{ trans('admin.gpschange.columns.seriegpsanterior') }}</th>
-                                        <th is='sortable' :column="'tipogpsanterior'">{{ trans('admin.gpschange.columns.tipogpsanterior') }}</th>
-                                        <th is='sortable' :column="'idgpsnuevo'">{{ trans('admin.gpschange.columns.idgpsnuevo') }}</th>
-                                        <th is='sortable' :column="'seriegpsnuevo'">{{ trans('admin.gpschange.columns.seriegpsnuevo') }}</th>
-                                        <th is='sortable' :column="'imeigpsnuevo'">{{ trans('admin.gpschange.columns.imeigpsnuevo') }}</th>
-                                        <th is='sortable' :column="'ipgpsnuevo'">{{ trans('admin.gpschange.columns.ipgpsnuevo') }}</th>
-                                        <th is='sortable' :column="'simgpsnuevo'">{{ trans('admin.gpschange.columns.simgpsnuevo') }}</th>
-                                        <th is='sortable' :column="'telefonogpsnuevo'">{{ trans('admin.gpschange.columns.telefonogpsnuevo') }}</th>
-                                        <th is='sortable' :column="'tipogpsnuevo'">{{ trans('admin.gpschange.columns.tipogpsnuevo') }}</th>
-                                        <th is='sortable' :column="'posicion'">{{ trans('admin.gpschange.columns.posicion') }}</th>
-                                        <th is='sortable' :column="'panico'">{{ trans('admin.gpschange.columns.panico') }}</th>
-                                        <th is='sortable' :column="'cortemotor'">{{ trans('admin.gpschange.columns.cortemotor') }}</th>
-                                        <th is='sortable' :column="'otros'">{{ trans('admin.gpschange.columns.otros') }}</th>
-                                        <th is='sortable' :column="'fecha'">{{ trans('admin.gpschange.columns.fecha') }}</th>
-                                        <th is='sortable' :column="'usuario'">{{ trans('admin.gpschange.columns.usuario') }}</th>
+                                        <th is='sortable' :column="'id'">{{ trans('admin.gpstransfer.columns.id') }}</th>
+                                        <th is='sortable' :column="'activated'">{{ trans('admin.gpstransfer.columns.activated') }}</th>
+                                        <th is='sortable' :column="'tecnico'">{{ trans('admin.gpstransfer.columns.tecnico') }}</th>
+                                        <th is='sortable' :column="'nombre'">{{ trans('admin.gpstransfer.columns.nombre') }}</th>
+                                        <th is='sortable' :column="'placaanterior'">{{ trans('admin.gpstransfer.columns.placaanterior') }}</th>
+                                        <th is='sortable' :column="'placanueva'">{{ trans('admin.gpstransfer.columns.placanueva') }}</th>
+                                        <th is='sortable' :column="'lugar'">{{ trans('admin.gpstransfer.columns.lugar') }}</th>
+                                        <th is='sortable' :column="'posicion'">{{ trans('admin.gpstransfer.columns.posicion') }}</th>
+                                        <th is='sortable' :column="'panico'">{{ trans('admin.gpstransfer.columns.panico') }}</th>
+                                        <th is='sortable' :column="'cortemotor'">{{ trans('admin.gpstransfer.columns.cortemotor') }}</th>
+                                        <th is='sortable' :column="'otros'">{{ trans('admin.gpstransfer.columns.otros') }}</th>
+                                        <th is='sortable' :column="'fecha'">{{ trans('admin.gpstransfer.columns.fecha') }}</th>
+                                        <th is='sortable' :column="'usuario'">{{ trans('admin.gpstransfer.columns.usuario') }}</th>
 
                                         <th></th>
                                     </tr>
                                     <tr v-show="(clickedBulkItemsCount > 0) || isClickedAll">
-                                        <td class="bg-bulk-info d-table-cell text-center" colspan="24">
-                                            <span class="align-middle font-weight-light text-dark">{{ trans('brackets/admin-ui::admin.listing.selected_items') }} @{{ clickedBulkItemsCount }}.  <a href="#" class="text-primary" @click="onBulkItemsClickedAll('/admin/gpschanges')" v-if="(clickedBulkItemsCount < pagination.state.total)"> <i class="fa" :class="bulkCheckingAllLoader ? 'fa-spinner' : ''"></i> {{ trans('brackets/admin-ui::admin.listing.check_all_items') }} @{{ pagination.state.total }}</a> <span class="text-primary">|</span> <a
+                                        <td class="bg-bulk-info d-table-cell text-center" colspan="15">
+                                            <span class="align-middle font-weight-light text-dark">{{ trans('brackets/admin-ui::admin.listing.selected_items') }} @{{ clickedBulkItemsCount }}.  <a href="#" class="text-primary" @click="onBulkItemsClickedAll('/admin/gpstransfers')" v-if="(clickedBulkItemsCount < pagination.state.total)"> <i class="fa" :class="bulkCheckingAllLoader ? 'fa-spinner' : ''"></i> {{ trans('brackets/admin-ui::admin.listing.check_all_items') }} @{{ pagination.state.total }}</a> <span class="text-primary">|</span> <a
                                                         href="#" class="text-primary" @click="onBulkItemsClickedAllUncheck()">{{ trans('brackets/admin-ui::admin.listing.uncheck_all_items') }}</a>  </span>
 
                                             <span class="pull-right pr-2">
-                                                <button class="btn btn-sm btn-danger pr-3 pl-3" @click="bulkDelete('/admin/gpschanges/bulk-destroy')">{{ trans('brackets/admin-ui::admin.btn.delete') }}</button>
+                                                <button class="btn btn-sm btn-danger pr-3 pl-3" @click="bulkDelete('/admin/gpstransfers/bulk-destroy')">{{ trans('brackets/admin-ui::admin.btn.delete') }}</button>
                                             </span>
 
                                         </td>
@@ -104,18 +95,9 @@
 
                                         <td>@{{ item.tecnico }}</td>
                                         <td>@{{ item.nombre }}</td>
-                                        <td>@{{ item.placa }}</td>
+                                        <td>@{{ item.placaanterior }}</td>
+                                        <td>@{{ item.placanueva }}</td>
                                         <td>@{{ item.lugar }}</td>
-                                        <td>@{{ item.idgpsanterior }}</td>
-                                        <td>@{{ item.seriegpsanterior }}</td>
-                                        <td>@{{ item.tipogpsanterior }}</td>
-                                        <td>@{{ item.idgpsnuevo }}</td>
-                                        <td>@{{ item.seriegpsnuevo }}</td>
-                                        <td>@{{ item.imeigpsnuevo }}</td>
-                                        <td>@{{ item.ipgpsnuevo }}</td>
-                                        <td>@{{ item.simgpsnuevo }}</td>
-                                        <td>@{{ item.telefonogpsnuevo }}</td>
-                                        <td>@{{ item.tipogpsnuevo }}</td>
                                         <td>@{{ item.posicion }}</td>
                                         <td>@{{ item.panico }}</td>
                                         <td>@{{ item.cortemotor }}</td>
@@ -150,13 +132,13 @@
                                 <i class="icon-magnifier"></i>
                                 <h3>{{ trans('brackets/admin-ui::admin.index.no_items') }}</h3>
                                 <p>{{ trans('brackets/admin-ui::admin.index.try_changing_items') }}</p>
-                                <a class="btn btn-primary btn-spinner" href="{{ url('admin/gpschanges/create') }}" role="button"><i class="fa fa-plus"></i>&nbsp; {{ trans('admin.gpschange.actions.create') }}</a>
+                                <a class="btn btn-primary btn-spinner" href="{{ url('admin/gpstransfers/create') }}" role="button"><i class="fa fa-plus"></i>&nbsp; {{ trans('admin.gpstransfer.actions.create') }}</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </gpschange-listing>
+    </gpstransfer-listing>
 
 @endsection

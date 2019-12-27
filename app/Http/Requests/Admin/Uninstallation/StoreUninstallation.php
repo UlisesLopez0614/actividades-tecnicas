@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Requests\Admin\Gpschange;
+namespace App\Http\Requests\Admin\Uninstallation;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Validation\Rule;
 
-class StoreGpschange extends FormRequest
+class StoreUninstallation extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -15,7 +15,7 @@ class StoreGpschange extends FormRequest
      */
     public function authorize(): bool
     {
-        return Gate::allows('admin.gpschange.create');
+        return Gate::allows('admin.uninstallation.create');
     }
 
     /**
@@ -31,20 +31,6 @@ class StoreGpschange extends FormRequest
             'nombre' => ['required', 'string'],
             'placa' => ['required', 'string'],
             'lugar' => ['required', 'string'],
-            'idgpsanterior' => ['required', 'string'],
-            'seriegpsanterior' => ['required', 'string'],
-            'tipogpsanterior' => ['required', 'string'],
-            'idgpsnuevo' => ['required', 'string'],
-            'seriegpsnuevo' => ['required', 'string'],
-            'imeigpsnuevo' => ['required', 'string'],
-            'ipgpsnuevo' => ['required', 'string'],
-            'simgpsnuevo' => ['required', 'string'],
-            'telefonogpsnuevo' => ['required', 'string'],
-            'tipogpsnuevo' => ['required', 'string'],
-            'posicion' => ['nullable', 'boolean'],
-            'panico' => ['nullable', 'boolean'],
-            'cortemotor' => ['nullable', 'boolean'],
-            'otros' => ['nullable', 'string'],
             'fecha' => ['required', 'date'],
             'observacion' => ['nullable', 'string'],
             'usuario' => ['required', 'string'],

@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Gpschange extends Model
+class Simchange extends Model
 {
     protected $fillable = [
         'activated',
@@ -12,16 +12,8 @@ class Gpschange extends Model
         'nombre',
         'placa',
         'lugar',
-        'idgpsanterior',
-        'seriegpsanterior',
-        'tipogpsanterior',
-        'idgpsnuevo',
-        'seriegpsnuevo',
-        'imeigpsnuevo',
-        'ipgpsnuevo',
-        'simgpsnuevo',
-        'telefonogpsnuevo',
-        'tipogpsnuevo',
+        'simanterior',
+        'simnuevo',
         'posicion',
         'panico',
         'cortemotor',
@@ -46,6 +38,6 @@ class Gpschange extends Model
 
     public function getResourceUrlAttribute()
     {
-        return url('/admin/gpschanges/'.$this->getKey());
+        return url('/admin/simchanges/'.$this->getKey());
     }
 }

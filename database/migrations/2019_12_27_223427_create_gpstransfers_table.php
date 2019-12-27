@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGpschangesTable extends Migration
+class CreateGpstransfersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,23 +13,14 @@ class CreateGpschangesTable extends Migration
      */
     public function up()
     {
-        Schema::create('gpschanges', function (Blueprint $table) {
+        Schema::create('gpstransfers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->boolean('activated');
+            $table->boolean('activated')->default(false);
             $table->string('tecnico');
             $table->string('nombre');
-            $table->string('placa');
+            $table->string('placaanterior');
+            $table->string('placanueva');
             $table->string('lugar');
-            $table->string('idgpsanterior');
-            $table->string('seriegpsanterior');
-            $table->string('tipogpsanterior');
-            $table->string('idgpsnuevo');
-            $table->string('seriegpsnuevo');
-            $table->string('imeigpsnuevo');
-            $table->string('ipgpsnuevo');
-            $table->string('simgpsnuevo');
-            $table->string('telefonogpsnuevo');
-            $table->string('tipogpsnuevo');
             $table->boolean('posicion')->nullable();
             $table->boolean('panico')->nullable();
             $table->boolean('cortemotor')->nullable();
@@ -37,7 +28,6 @@ class CreateGpschangesTable extends Migration
             $table->date('fecha');
             $table->text('observacion')->nullable();
             $table->string('usuario');
-
             $table->timestamps();
         });
     }
@@ -49,6 +39,6 @@ class CreateGpschangesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gpschanges');
+        Schema::dropIfExists('gpstransfer');
     }
 }
