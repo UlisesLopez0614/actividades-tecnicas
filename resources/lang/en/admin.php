@@ -143,5 +143,68 @@ return [
         ],
     ],
 
+    'revision' => [
+        'title' => 'Revisions',
+
+        'actions' => [
+            'index' => 'Revisions',
+            'create' => 'New Revision',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'activated' => 'Activated',
+            'tecnico' => 'Tecnico',
+            'equipo' => 'Equipo',
+            'placa' => 'Placa',
+            'lugar' => 'Lugar',
+            'posicion' => 'Posicion',
+            'panico' => 'Panico',
+            'cortemotor' => 'Cortemotor',
+            'otros' => 'Otros',
+            'fecha' => 'Fecha',
+            'observacion' => 'Observacion',
+            'usuario' => 'Usuario',
+            
+        ],
+    ],
+
+    'gpschange' => [
+        'title' => 'Gpschanges',
+
+        'actions' => [
+            'index' => 'Gpschanges',
+            'create' => 'New Gpschange',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'activated' => 'Activated',
+            'tecnico' => 'Tecnico',
+            'nombre' => 'Nombre',
+            'placa' => 'Placa',
+            'lugar' => 'Lugar',
+            'idgpsanterior' => 'Idgpsanterior',
+            'seriegpsanterior' => 'Seriegpsanterior',
+            'tipogpsanterior' => 'Tipogpsanterior',
+            'idgpsnuevo' => 'Idgpsnuevo',
+            'seriegpsnuevo' => 'Seriegpsnuevo',
+            'imeigpsnuevo' => 'Imeigpsnuevo',
+            'ipgpsnuevo' => 'Ipgpsnuevo',
+            'simgpsnuevo' => 'Simgpsnuevo',
+            'telefonogpsnuevo' => 'Telefonogpsnuevo',
+            'tipogpsnuevo' => 'Tipogpsnuevo',
+            'posicion' => 'Posicion',
+            'panico' => 'Panico',
+            'cortemotor' => 'Cortemotor',
+            'otros' => 'Otros',
+            'fecha' => 'Fecha',
+            'observacion' => 'Observacion',
+            
+        ],
+    ],
+
     // Do not delete me :) I'm used for auto-generation
 ];

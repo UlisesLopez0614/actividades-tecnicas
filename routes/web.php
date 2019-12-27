@@ -70,3 +70,33 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
         });
     });
 });
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('Admin')->name('admin/')->group(static function() {
+        Route::prefix('revisions')->name('revisions/')->group(static function() {
+            Route::get('/',                                             'RevisionsController@index')->name('index');
+            Route::get('/create',                                       'RevisionsController@create')->name('create');
+            Route::post('/',                                            'RevisionsController@store')->name('store');
+            Route::get('/{revision}/edit',                              'RevisionsController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'RevisionsController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{revision}',                                  'RevisionsController@update')->name('update');
+            Route::delete('/{revision}',                                'RevisionsController@destroy')->name('destroy');
+        });
+    });
+});
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('Admin')->name('admin/')->group(static function() {
+        Route::prefix('gpschanges')->name('gpschanges/')->group(static function() {
+            Route::get('/',                                             'GpschangesController@index')->name('index');
+            Route::get('/create',                                       'GpschangesController@create')->name('create');
+            Route::post('/',                                            'GpschangesController@store')->name('store');
+            Route::get('/{gpschange}/edit',                             'GpschangesController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'GpschangesController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{gpschange}',                                 'GpschangesController@update')->name('update');
+            Route::delete('/{gpschange}',                               'GpschangesController@destroy')->name('destroy');
+        });
+    });
+});
