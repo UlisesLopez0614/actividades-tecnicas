@@ -30,7 +30,7 @@
                                     </div>
                                     <div class="col-sm-auto form-group ">
                                         <select class="form-control" v-model="pagination.state.per_page">
-                                            
+
                                             <option value="10">10</option>
                                             <option value="25">25</option>
                                             <option value="100">100</option>
@@ -39,7 +39,7 @@
                                 </div>
                             </form>
 
-                            <table class="table table-hover table-listing">
+                            <table class="table table-hover table-listing table-responsive">
                                 <thead>
                                     <tr>
                                         <th class="bulk-checkbox">
@@ -49,7 +49,7 @@
                                             </label>
                                         </th>
 
-                                        <th is='sortable' :column="'id'">{{ trans('admin.revision.columns.id') }}</th>
+                                        <!--th is='sortable' :column="'id'">{{ trans('admin.revision.columns.id') }}</th-->
                                         <th is='sortable' :column="'activated'">{{ trans('admin.revision.columns.activated') }}</th>
                                         <th is='sortable' :column="'tecnico'">{{ trans('admin.revision.columns.tecnico') }}</th>
                                         <th is='sortable' :column="'equipo'">{{ trans('admin.revision.columns.equipo') }}</th>
@@ -84,7 +84,7 @@
                                             </label>
                                         </td>
 
-                                    <td>@{{ item.id }}</td>
+                                    <!--td>@{{ item.id }}</td-->
                                         <td>
                                             <label class="switch switch-3d switch-success">
                                                 <input type="checkbox" class="switch-input" v-model="collection[index].activated" @change="toggleSwitch(item.resource_url, 'activated', collection[index])">
@@ -102,7 +102,7 @@
                                         <td>@{{ item.otros }}</td>
                                         <td>@{{ item.fecha | date }}</td>
                                         <td>@{{ item.usuario }}</td>
-                                        
+
                                         <td>
                                             <div class="row no-gutters">
                                                 <div class="col-auto">

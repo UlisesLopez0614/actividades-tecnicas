@@ -9,6 +9,7 @@
            <li class="nav-item"><a class="nav-link" href="{{ url('admin/simchanges') }}"><i class="nav-icon icon-umbrella"></i> {{ trans('admin.simchange.title') }}</a></li>
            <li class="nav-item"><a class="nav-link" href="{{ url('admin/uninstallations') }}"><i class="nav-icon icon-diamond"></i> {{ trans('admin.uninstallation.title') }}</a></li>
            <li class="nav-item"><a class="nav-link" href="{{ url('admin/gpstransfers') }}"><i class="nav-icon icon-flag"></i> {{ trans('admin.gpstransfer.title') }}</a></li>
+           <li class="nav-item"><a class="nav-link" href="{{ url('admin/homologations') }}"><i class="nav-icon icon-plane"></i> {{ trans('admin.homologation.title') }}</a></li>
            {{-- Do not delete me :) I'm used for auto-generation menu items --}}
 
             <li class="nav-title">{{ trans('brackets/admin-ui::admin.sidebar.settings') }}</li>

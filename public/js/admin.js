@@ -111720,6 +111720,80 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/admin/homologation/Form.js":
+/*!*************************************************!*\
+  !*** ./resources/js/admin/homologation/Form.js ***!
+  \*************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app_components_Form_AppForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../app-components/Form/AppForm */ "./resources/js/admin/app-components/Form/AppForm.js");
+
+Vue.component('homologation-form', {
+  mixins: [_app_components_Form_AppForm__WEBPACK_IMPORTED_MODULE_0__["default"]],
+  data: function data() {
+    return {
+      form: {
+        activated: false,
+        tecnico: '',
+        equipo: '',
+        placa: '',
+        idgps: '',
+        serie: '',
+        imei: '',
+        sim: '',
+        ip: '',
+        telefono: '',
+        lugar: '',
+        posicion: false,
+        panico: false,
+        cortemotor: false,
+        otros: '',
+        fecha: '',
+        observacion: '',
+        usuario: ''
+      }
+    };
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/admin/homologation/Listing.js":
+/*!****************************************************!*\
+  !*** ./resources/js/admin/homologation/Listing.js ***!
+  \****************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app_components_Listing_AppListing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../app-components/Listing/AppListing */ "./resources/js/admin/app-components/Listing/AppListing.js");
+
+Vue.component('homologation-listing', {
+  mixins: [_app_components_Listing_AppListing__WEBPACK_IMPORTED_MODULE_0__["default"]]
+});
+
+/***/ }),
+
+/***/ "./resources/js/admin/homologation/index.js":
+/*!**************************************************!*\
+  !*** ./resources/js/admin/homologation/index.js ***!
+  \**************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Listing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Listing */ "./resources/js/admin/homologation/Listing.js");
+/* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Form */ "./resources/js/admin/homologation/Form.js");
+
+
+
+/***/ }),
+
 /***/ "./resources/js/admin/index.js":
 /*!*************************************!*\
   !*** ./resources/js/admin/index.js ***!
@@ -111739,6 +111813,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _simchange__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./simchange */ "./resources/js/admin/simchange/index.js");
 /* harmony import */ var _uninstallation__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./uninstallation */ "./resources/js/admin/uninstallation/index.js");
 /* harmony import */ var _gpstransfer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./gpstransfer */ "./resources/js/admin/gpstransfer/index.js");
+/* harmony import */ var _homologation__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./homologation */ "./resources/js/admin/homologation/index.js");
+
 
 
 

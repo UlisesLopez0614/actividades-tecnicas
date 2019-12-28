@@ -1,14 +1,3 @@
-<div class="form-check row" :class="{'has-danger': errors.has('activated'), 'has-success': fields.activated && fields.activated.valid }">
-    <div class="ml-md-auto" :class="isFormLocalized ? 'col-md-8' : 'col-md-10'">
-        <input class="form-check-input" id="activated" type="checkbox" v-model="form.activated" v-validate="''" data-vv-name="activated"  name="activated_fake_element">
-        <label class="form-check-label" for="activated">
-            {{ trans('admin.gpschange.columns.activated') }}
-        </label>
-        <input type="hidden" name="activated" :value="form.activated">
-        <div v-if="errors.has('activated')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('activated') }}</div>
-    </div>
-</div>
-
 <div class="form-group row align-items-center" :class="{'has-danger': errors.has('simgpsnuevo'), 'has-success': fields.simgpsnuevo && fields.simgpsnuevo.valid }">
     <label for="simgpsnuevo" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.gpschange.columns.simgpsnuevo') }}</label>
         <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
@@ -190,5 +179,3 @@
         <div v-if="errors.has('usuario')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('usuario') }}</div>
     </div>
 </div>
-
-

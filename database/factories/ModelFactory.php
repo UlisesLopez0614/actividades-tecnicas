@@ -246,3 +246,37 @@ $factory->define(App\Models\Gpstransfer::class, static function (Faker\Generator
         
     ];
 });
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Homologation::class, static function (Faker\Generator $faker) {
+    return [
+        
+        
+    ];
+});
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Homologation::class, static function (Faker\Generator $faker) {
+    return [
+        'activated' => $faker->boolean(),
+        'tecnico' => $faker->sentence,
+        'equipo' => $faker->sentence,
+        'placa' => $faker->sentence,
+        'idgps' => $faker->sentence,
+        'serie' => $faker->sentence,
+        'imei' => $faker->sentence,
+        'sim' => $faker->sentence,
+        'ip' => $faker->sentence,
+        'telefono' => $faker->sentence,
+        'lugar' => $faker->sentence,
+        'posicion' => $faker->boolean(),
+        'panico' => $faker->boolean(),
+        'cortemotor' => $faker->boolean(),
+        'otros' => $faker->sentence,
+        'fecha' => $faker->date(),
+        'observacion' => $faker->text(),
+        'usuario' => $faker->sentence,
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        
+        
+    ];
+});

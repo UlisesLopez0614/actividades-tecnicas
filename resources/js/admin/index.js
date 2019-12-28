@@ -8,3 +8,4 @@ import './gpschange';
 import './simchange';
 import './uninstallation';
 import './gpstransfer';
+import './homologation';

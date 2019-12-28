@@ -351,5 +351,53 @@ return [
         ],
     ],
 
+    'homologation' => [
+        'title' => 'Homologations',
+
+        'actions' => [
+            'index' => 'Homologations',
+            'create' => 'New Homologation',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            
+        ],
+    ],
+
+    'homologation' => [
+        'title' => 'Homologations',
+
+        'actions' => [
+            'index' => 'Homologations',
+            'create' => 'New Homologation',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'activated' => 'Activated',
+            'tecnico' => 'Tecnico',
+            'equipo' => 'Equipo',
+            'placa' => 'Placa',
+            'idgps' => 'Idgps',
+            'serie' => 'Serie',
+            'imei' => 'Imei',
+            'sim' => 'Sim',
+            'ip' => 'Ip',
+            'telefono' => 'Telefono',
+            'lugar' => 'Lugar',
+            'posicion' => 'Posicion',
+            'panico' => 'Panico',
+            'cortemotor' => 'Cortemotor',
+            'otros' => 'Otros',
+            'fecha' => 'Fecha',
+            'observacion' => 'Observacion',
+            'usuario' => 'Usuario',
+            
+        ],
+    ],
+
     // Do not delete me :) I'm used for auto-generation
 ];
