@@ -2,16 +2,16 @@
 
 return [
     'auth_global' => [
-        'email' => 'Your e-mail',
-        'password' => 'Password',
-        'password_confirm' => 'Password confirmation',
+        'email' => 'Tu correo',
+        'password' => 'Contraseña',
+        'password_confirm' => 'Confirmar contraseña',
     ],
 
     'login' => [
         'title' => 'Login',
-        'sign_in_text' => 'Sign In to your account',
+        'sign_in_text' => 'Inicia sesión en su cuenta',
         'button' => 'Login',
-        'forgot_password' => 'Forgot password?',
+        'forgot_password' => 'Olvidaste tu contraseña?',
     ],
 
     'password_reset' => [

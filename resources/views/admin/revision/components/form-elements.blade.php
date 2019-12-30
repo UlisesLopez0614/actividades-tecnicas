@@ -30,6 +30,10 @@
     </div>
 </div>
 
+<label class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">
+    Pruebas realizadas
+</label>
+
 <div class="form-check row" :class="{'has-danger': errors.has('posicion'), 'has-success': fields.posicion && fields.posicion.valid }">
     <div class="ml-md-auto" :class="isFormLocalized ? 'col-md-8' : 'col-md-10'">
         <input class="form-check-input" id="posicion" type="checkbox" v-model="form.posicion" v-validate="''" data-vv-name="posicion"  name="posicion_fake_element">
@@ -70,6 +74,9 @@
         <div v-if="errors.has('otros')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('otros') }}</div>
     </div>
 </div>
+
+<br>
+<br>
 
 <div class="form-group row align-items-center" :class="{'has-danger': errors.has('fecha'), 'has-success': fields.fecha && fields.fecha.valid }">
     <label for="fecha" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.revision.columns.fecha') }}</label>

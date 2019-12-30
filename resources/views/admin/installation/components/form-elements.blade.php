@@ -115,9 +115,6 @@
     </div>
 </div>
 
-<br>
-<br>
-
 <div class="form-group row align-items-center" :class="{'has-danger': errors.has('otros'), 'has-success': fields.otros && fields.otros.valid }">
     <label for="otros" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.installation.columns.otros') }}</label>
         <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
@@ -125,6 +122,9 @@
         <div v-if="errors.has('otros')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('otros') }}</div>
     </div>
 </div>
+
+<br>
+<br>
 
 <div class="form-group row align-items-center" :class="{'has-danger': errors.has('fecha'), 'has-success': fields.fecha && fields.fecha.valid }">
     <label for="fecha" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.installation.columns.fecha') }}</label>
