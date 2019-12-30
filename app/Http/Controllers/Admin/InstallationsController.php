@@ -9,6 +9,7 @@ use App\Http\Requests\Admin\Installation\IndexInstallation;
 use App\Http\Requests\Admin\Installation\StoreInstallation;
 use App\Http\Requests\Admin\Installation\UpdateInstallation;
 use App\Models\Installation;
+use App\Models\Technician;
 use Brackets\AdminListing\Facades\AdminListing;
 use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
@@ -63,9 +64,13 @@ class InstallationsController extends Controller
      */
     public function create()
     {
+        $technicians = Technician::all();
+        //dd($technicians);
         $this->authorize('admin.installation.create');
 
-        return view('admin.installation.create');
+        return view('admin.installation.create', [
+            'technician' => $technicians,
+        ]);
     }
 
     /**
