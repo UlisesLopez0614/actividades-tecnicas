@@ -2,7 +2,7 @@
     <nav class="sidebar-nav">
         <ul class="nav">
             <li class="nav-title">{{ trans('brackets/admin-ui::admin.sidebar.content') }}</li>
-            <li class="nav-item"><a class="nav-link" href="{{ url('admin/technicians') }}"><i class="nav-icon icon-magnet"></i> {{ trans('admin.technician.title') }}</a></li>
+            <!--li class="nav-item"><a class="nav-link" href="{{ url('admin/technicians') }}"><i class="nav-icon icon-magnet"></i> {{ trans('admin.technician.title') }}</a></li-->
            <li class="nav-item"><a class="nav-link" href="{{ url('admin/installations') }}"><i class="nav-icon icon-puzzle"></i> {{ trans('admin.installation.title') }}</a></li>
            <li class="nav-item"><a class="nav-link" href="{{ url('admin/revisions') }}"><i class="nav-icon icon-magnet"></i> {{ trans('admin.revision.title') }}</a></li>
            <li class="nav-item"><a class="nav-link" href="{{ url('admin/gpschanges') }}"><i class="nav-icon icon-diamond"></i> {{ trans('admin.gpschange.title') }}</a></li>
