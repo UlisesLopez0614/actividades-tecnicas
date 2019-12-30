@@ -50,6 +50,7 @@
                                         </th>
 
                                         <!--th is='sortable' :column="'id'">{{ trans('admin.installation.columns.id') }}</th-->
+                                        <th is='sortable' :column="'activated'">{{ trans('admin.installation.columns.activated') }}</th>
                                         <th is='sortable' :column="'tecnico'">{{ trans('admin.installation.columns.tecnico') }}</th>
                                         <th is='sortable' :column="'equipo'">{{ trans('admin.installation.columns.equipo') }}</th>
                                         <th is='sortable' :column="'placa'">{{ trans('admin.installation.columns.placa') }}</th>
@@ -70,7 +71,7 @@
                                         <th></th>
                                     </tr>
                                     <tr v-show="(clickedBulkItemsCount > 0) || isClickedAll">
-                                        <td class="bg-bulk-info d-table-cell text-center" colspan="19">
+                                        <td class="bg-bulk-info d-table-cell text-center" colspan="20">
                                             <span class="align-middle font-weight-light text-dark">{{ trans('brackets/admin-ui::admin.listing.selected_items') }} @{{ clickedBulkItemsCount }}.  <a href="#" class="text-primary" @click="onBulkItemsClickedAll('/admin/installations')" v-if="(clickedBulkItemsCount < pagination.state.total)"> <i class="fa" :class="bulkCheckingAllLoader ? 'fa-spinner' : ''"></i> {{ trans('brackets/admin-ui::admin.listing.check_all_items') }} @{{ pagination.state.total }}</a> <span class="text-primary">|</span> <a
                                                         href="#" class="text-primary" @click="onBulkItemsClickedAllUncheck()">{{ trans('brackets/admin-ui::admin.listing.uncheck_all_items') }}</a>  </span>
 
@@ -90,6 +91,13 @@
                                         </td>
 
                                     <!--td>@{{ item.id }}</td-->
+                                        <td>
+                                            <label class="switch switch-3d switch-success">
+                                                <input type="checkbox" class="switch-input" v-model="collection[index].activated" @change="toggleSwitch(item.resource_url, 'activated', collection[index])">
+                                                <span class="switch-slider"></span>
+                                            </label>
+                                        </td>
+
                                         <td>@{{ item.tecnico }}</td>
                                         <td>@{{ item.equipo }}</td>
                                         <td>@{{ item.placa }}</td>

@@ -51,16 +51,17 @@ return [
 
         'actions' => [
             'index' => 'Instalaciones',
-            'create' => 'Nueva Instalaciones',
+            'create' => 'Nueva Instalación',
             'edit' => 'Editar :name',
         ],
 
         'columns' => [
             'id' => 'ID',
+            'activated' => 'Revisado',
             'tecnico' => 'Nombre del Técnico',
             'equipo' => 'Nombre del Equipo',
             'placa' => 'Placa',
-            'idgps' => 'ID GPS',
+            'idgps' => 'ID del GPS',
             'serie' => 'Serie',
             'imei' => 'IMEI',
             'sim' => 'SIM',
@@ -75,71 +76,6 @@ return [
             'observacion' => 'Observación',
             'usuario' => 'Usuario',
 
-        ],
-    ],
-
-    'installation' => [
-        'title' => 'Installations',
-
-        'actions' => [
-            'index' => 'Installations',
-            'create' => 'New Installation',
-            'edit' => 'Edit :name',
-        ],
-
-        'columns' => [
-            'id' => 'ID',
-            'tecnico' => 'Tecnico',
-            'equipo' => 'Equipo',
-            'placa' => 'Placa',
-            'idgps' => 'Idgps',
-            'serie' => 'Serie',
-            'imei' => 'Imei',
-            'sim' => 'Sim',
-            'ip' => 'Ip',
-            'telefono' => 'Telefono',
-            'lugar' => 'Lugar',
-            'posicion' => 'Posicion',
-            'panico' => 'Panico',
-            'cortemotor' => 'Cortemotor',
-            'otros' => 'Otros',
-            'fecha' => 'Fecha',
-            'observacion' => 'Observacion',
-            'usuario' => 'Usuario',
-            
-        ],
-    ],
-
-    'installation' => [
-        'title' => 'Installations',
-
-        'actions' => [
-            'index' => 'Installations',
-            'create' => 'New Installation',
-            'edit' => 'Edit :name',
-        ],
-
-        'columns' => [
-            'id' => 'ID',
-            'activated' => 'Activated',
-            'tecnico' => 'Tecnico',
-            'equipo' => 'Equipo',
-            'placa' => 'Placa',
-            'idgps' => 'Idgps',
-            'serie' => 'Serie',
-            'imei' => 'Imei',
-            'sim' => 'Sim',
-            'ip' => 'Ip',
-            'telefono' => 'Telefono',
-            'lugar' => 'Lugar',
-            'posicion' => 'Posicion',
-            'panico' => 'Panico',
-            'cortemotor' => 'Cortemotor',
-            'otros' => 'Otros',
-            'fecha' => 'Fecha',
-            'observacion' => 'Observacion',
-            'usuario' => 'Usuario',
-            
         ],
     ],
 
@@ -166,43 +102,7 @@ return [
             'fecha' => 'Fecha',
             'observacion' => 'Observacion',
             'usuario' => 'Usuario',
-            
-        ],
-    ],
 
-    'gpschange' => [
-        'title' => 'Gpschanges',
-
-        'actions' => [
-            'index' => 'Gpschanges',
-            'create' => 'New Gpschange',
-            'edit' => 'Edit :name',
-        ],
-
-        'columns' => [
-            'id' => 'ID',
-            'activated' => 'Activated',
-            'tecnico' => 'Tecnico',
-            'nombre' => 'Nombre',
-            'placa' => 'Placa',
-            'lugar' => 'Lugar',
-            'idgpsanterior' => 'Idgpsanterior',
-            'seriegpsanterior' => 'Seriegpsanterior',
-            'tipogpsanterior' => 'Tipogpsanterior',
-            'idgpsnuevo' => 'Idgpsnuevo',
-            'seriegpsnuevo' => 'Seriegpsnuevo',
-            'imeigpsnuevo' => 'Imeigpsnuevo',
-            'ipgpsnuevo' => 'Ipgpsnuevo',
-            'simgpsnuevo' => 'Simgpsnuevo',
-            'telefonogpsnuevo' => 'Telefonogpsnuevo',
-            'tipogpsnuevo' => 'Tipogpsnuevo',
-            'posicion' => 'Posicion',
-            'panico' => 'Panico',
-            'cortemotor' => 'Cortemotor',
-            'otros' => 'Otros',
-            'fecha' => 'Fecha',
-            'observacion' => 'Observacion',
-            
         ],
     ],
 
@@ -239,35 +139,7 @@ return [
             'fecha' => 'Fecha',
             'observacion' => 'Observacion',
             'usuario' => 'Usuario',
-            
-        ],
-    ],
 
-    'simchange' => [
-        'title' => 'Simchanges',
-
-        'actions' => [
-            'index' => 'Simchanges',
-            'create' => 'New Simchange',
-            'edit' => 'Edit :name',
-        ],
-
-        'columns' => [
-            'id' => 'ID',
-            'tecnico' => 'Tecnico',
-            'nombre' => 'Nombre',
-            'placa' => 'Placa',
-            'lugar' => 'Lugar',
-            'simanterior' => 'Simanterior',
-            'simnuevo' => 'Simnuevo',
-            'posicion' => 'Posicion',
-            'panico' => 'Panico',
-            'cortemotor' => 'Cortemotor',
-            'otros' => 'Otros',
-            'fecha' => 'Fecha',
-            'observacion' => 'Observacion',
-            'usuario' => 'Usuario',
-            
         ],
     ],
 
@@ -296,7 +168,7 @@ return [
             'fecha' => 'Fecha',
             'observacion' => 'Observacion',
             'usuario' => 'Usuario',
-            
+
         ],
     ],
 
@@ -319,7 +191,7 @@ return [
             'fecha' => 'Fecha',
             'observacion' => 'Observacion',
             'usuario' => 'Usuario',
-            
+
         ],
     ],
 
@@ -347,22 +219,7 @@ return [
             'fecha' => 'Fecha',
             'observacion' => 'Observacion',
             'usuario' => 'Usuario',
-            
-        ],
-    ],
 
-    'homologation' => [
-        'title' => 'Homologations',
-
-        'actions' => [
-            'index' => 'Homologations',
-            'create' => 'New Homologation',
-            'edit' => 'Edit :name',
-        ],
-
-        'columns' => [
-            'id' => 'ID',
-            
         ],
     ],
 
@@ -395,9 +252,11 @@ return [
             'fecha' => 'Fecha',
             'observacion' => 'Observacion',
             'usuario' => 'Usuario',
-            
+
         ],
     ],
+
+
 
     // Do not delete me :) I'm used for auto-generation
 ];

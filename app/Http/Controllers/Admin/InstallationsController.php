@@ -19,7 +19,6 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
-use Auth;
 
 class InstallationsController extends Controller
 {
@@ -38,7 +37,7 @@ class InstallationsController extends Controller
             $request,
 
             // set columns to query
-            ['id', 'tecnico', 'equipo', 'placa', 'idgps', 'serie', 'imei', 'sim', 'ip', 'telefono', 'lugar', 'posicion', 'panico', 'cortemotor', 'otros', 'fecha', 'usuario'],
+            ['id', 'activated', 'tecnico', 'equipo', 'placa', 'idgps', 'serie', 'imei', 'sim', 'ip', 'telefono', 'lugar', 'posicion', 'panico', 'cortemotor', 'otros', 'fecha', 'usuario'],
 
             // set columns to searchIn
             ['id', 'tecnico', 'equipo', 'placa', 'idgps', 'serie', 'imei', 'sim', 'ip', 'telefono', 'lugar', 'otros', 'observacion', 'usuario']
@@ -65,8 +64,6 @@ class InstallationsController extends Controller
     public function create()
     {
         $this->authorize('admin.installation.create');
-
-        $installation = "Vladimir Romero";
 
         return view('admin.installation.create');
     }
