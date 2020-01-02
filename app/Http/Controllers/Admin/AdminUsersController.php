@@ -79,6 +79,8 @@ class AdminUsersController extends Controller
     public function create()
     {
         $this->authorize('admin.admin-user.create');
+        $roles = Role::where('guard_name', $this->guard)->get();
+        //dd($roles);
 
         return view('admin.admin-user.create', [
             'activation' => Config::get('admin-auth.activation_enabled'),

@@ -64,12 +64,12 @@ class InstallationsController extends Controller
      */
     public function create()
     {
-        $technicians = Technician::all();
-        //dd($technicians);
         $this->authorize('admin.installation.create');
+        $technician = Technician::get();
+        //dd($technician);
 
         return view('admin.installation.create', [
-            'technician' => $technicians,
+            'technician' => Technician::get(),
         ]);
     }
 
@@ -122,6 +122,7 @@ class InstallationsController extends Controller
 
         return view('admin.installation.edit', [
             'installation' => $installation,
+            'technician' => Technician::get(),
         ]);
     }
 
